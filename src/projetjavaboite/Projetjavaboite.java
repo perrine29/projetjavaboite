@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package projetjavaboite;
-
+import java.util.Random;
+import java.util.Scanner;
 /**
  *
  * @author isen
@@ -32,15 +33,35 @@ public class Projetjavaboite {
         
         
        Scanner sc = new Scanner(System.in);
-       Client newclient = new Client();
+       Client myClient = new Client();
+       
+        int c = myClient.ArriverDevantLaBoite();
         
-        newclient.clientCaract();
+        while( c != 4){
+           
+            switch(c){
+                case 1:
+                   myClient.clientCaract();
+                    break;
+                case 2:     
+                myClient.ArriverDevantLaBoite(); // atention boucle ne se fini jamais, fonction à modifier
+                  break;  
+                case 3:
+                  System.out.println(" Merci d'être venu à bientot");
+                  break;  
+                case 4:
+                  break;  
+                default:
+                   System.out.println("Vous n'avez pas fait le bon numéro!");
+               c = myClient.ArriverDevantLaBoite();
+            }
+            
+            
+        }
         
-        Bouncer momo=new Bouncer();
-        System.out.println("yoo");
-        Homme homme=new Homme();
-        homme.getInTheClub();
-        System.out.println("bibi");
+        
+                
+        
     }
 }
 
@@ -57,4 +78,4 @@ public class Projetjavaboite {
     
     
     
-}
+

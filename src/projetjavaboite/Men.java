@@ -19,22 +19,36 @@ public class Men extends Client {
     }
      
     Scanner sc=new Scanner(System.in);
+    
      @Override public void getInTheClub(){
+         
         System.out.println("Que voulez-vous dire au vigil? \n 1:Bonjour \n 2:Yo, mon pote ! \n 3:Je crois que je vais vomir \n");
         int presentationChoice;
         presentationChoice=sc.nextInt();
+        
         switch (presentationChoice){
-            case 1: {
+              case 1: {
         String phrase[]={"désolé, le videur est de mauvaise humeur,réessayer plus tard!","Vous avez fait bonne impression, vous pouvez entrer in da club"};
         int idx = new Random().nextInt(phrase.length);
         String random = (phrase[idx]);
         System.out.println(random);
+        ArriverDevantLaBoite();
             }
                 break;
             case 2:
+                System.out.println("Salut mon pote, vas-y entre");
+                SeDéplacer();
+                
                 break;
             case 3:
+                System.out.println("t'as pas ta place ici , dégage!");
+                ArriverDevantLaBoite();
+                
                 break;
+                
+            default: System.out.println("erreur de saisie"); 
+                getInTheClub();
+                
          }
      }
 }

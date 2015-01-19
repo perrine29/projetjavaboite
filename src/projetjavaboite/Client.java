@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package projetjavaboite;
-
+import java.util.Random;
+import java.util.Scanner;
+import java.util.InputMismatchException;
 /**
  *
  * @author isen
@@ -61,66 +63,113 @@ public class Client {
     //Les méthodes
     
      public void getInTheClub(){
-        System.out.println("tg");
+        
         
     }
  
-    public void ArriverDevantLaBoite(){
+    public int ArriverDevantLaBoite(){
     System.out.println("Vous êtes actuellement devant une boite de nuit, que voulez vous faire ? \n 1- Entrer dans la boite de nuit \n 2- Rester devant la boite \n 3- Quitter le simulateur");
-       int choix= sc.nextInt();
-          
+       int choix=0;
+       int reponse=0;
            
-           switch(choix){
+       
+       choix= sc.nextInt();
+       
+            switch(choix){
                
                case 1:  
-               clientCaract();
+               reponse = 1;
+               
                 break;
                case 2: 
-               ArriverDevantLaBoite();
+                   reponse =2;
+               
                break;
                case 3:
-               System.out.println(" Merci d'être venu à bientot");    
+                   reponse = 3;
+                  
                break;
                    
-               default: System.out.println("vous n'avez pas fait le bon numéro");
-               ArriverDevantLaBoite();
-                   
+               default: 
+                    System.out.println("vous n'avez pas fait le bon numéro");
+               this.ArriverDevantLaBoite();
            }
-           
+            
+          return reponse; 
          }
-           
-    public void clientCaract(){
-        System.out.println("Bonjour, quel age avez-vous");
-        this.age =sc.nextInt();
-        if (this.age >= 50)
-            System.out.println("Désolé, vous êtes trop vieux pour aller en boîte !");
+    
+    
+    public void Age(){
         
-        else if(this.age>=18) {
-            System.out.println("êtes vous un homme ou une femme : homme\n 2:femme");
-            String sexe=sc.nextLine();
+      
+     System.out.println("Bonjour, quel age avez-vous");
+            this.age = sc.nextInt();
+        
+    
+    
+    
+    
+}
+    
+    
+    public Client clientCaract(){
+        
+        Client newClient = null ;
+        
+        /*if (this.age >= 50 || this.age < 18){
+            System.out.println("Désolé, vous n'avaez pas l'age d'aller en boite !");
+            ArriverDevantLaBoite();
+        }*/
+       
+            System.out.println("êtes vous un homme ou une femme ?");
+            String sexe=sc.next();
             switch (sexe){
                 case "homme" :
-                        Homme.getInTheClub();
+                      newClient = new Men(); // Men.getInTheClub();
+                       System.out.println(newClient.sexe);
+                       
+                               
                     break;
                 case "femme": 
-                        Femme.getInTheClub();
+                      newClient = new Women();//  Women.getInTheClub();
+                       System.out.println(newClient.sexe);
+                       
+                       
                     break;
-                        }
-        
-       System.out.println("Vous avez l'âge requis pour entrer en boite");
-        }
                     
-        else 
-            System.out.println("Désolé vous n'avez pas l'âge requis pour entrer en boite, veuillez rentrez chez vous");
-          
+                default : System.out.println("erreur dans la saisie de la réponse");   
+                    this.clientCaract();
+            }
+  this.getInTheClub();
+                        
+ newClient.getInTheClub();
+  return newClient;
     }
-  
-     
   
  public void SeDéplacer(){
      
-     System.out.println("Vous êtes dans la boite de nuit! Que voulez vous faire: \n 1- aller au bar \n 2- aller danser \n 3- "); 
+     System.out.println("Vous êtes dans la boite de nuit! Que voulez vous faire: \n 1- aller au bar \n 2- aller danser \n 3- Jouer \n 4- Sortir de la boite"); 
      
+     int choix = sc.nextInt();
+     
+     switch(choix){
+         
+         case 1:
+             break;
+         case 2:
+             break;
+         case 3:
+             break;
+         case 4: System.out.println("Merci d'être venu(e)");
+         //ArriverDevantLaboite();
+             
+             break;
+         default: System.out.println("erreur de saisie, veuillez reformuler votre choix");
+                     
+             
+            
+         
+     }
      // aller au bar : commander budget, danser sur le bar: enerver le videur, voler un verre enerver le videur , jeu de la carte: budget
      
      // aller danser: danser comme un beau goss, danser comme un looser, draguer, renverser son verre 
