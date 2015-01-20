@@ -23,28 +23,28 @@ import java.util.Scanner;
 
      @Override public void getInTheClub(){
 System.out.println("Que voulez-vous dire au vigil? \n 1:Bonjour \n 2:Salut max, comment tu vas ? ! \n 3:Je crois que je vais vomir \n");
-        int presentationChoice;
-        presentationChoice=sc.nextInt();
+        String presentationChoice;
+        presentationChoice=sc.nextLine();
         
         switch (presentationChoice){
-              case 1: System.out.println("Bonjour mademoiselle, allez y ");
+              case "1": System.out.println("Bonjour mademoiselle, allez y ");
        
-        ArriverDevantLaBoite();
+        this.tonEtat();
             
                 break;
-            case 2:
+            case "2":
                 System.out.println("Salut blabla");
-                SeDéplacer();
+                this.tonEtat();
                 
                 break;
-            case 3:
+            case "3":
                 System.out.println("t'as pas ta place ici , dégage!");
-                ArriverDevantLaBoite();
+                this.ArriverDevantLaBoite();
                 
                 break;
                 
             default: System.out.println("erreur de saisie"); 
-                getInTheClub();
+                this.getInTheClub();
                 
          }
      }

@@ -35,7 +35,7 @@ public class Projetjavaboite {
        Scanner sc = new Scanner(System.in);
        Client myClient = new Client();
        
-        int c = myClient.ArriverDevantLaBoite();
+        int c= myClient.ArriverDevantLaBoite();
         
         while( c != 4){
            
@@ -48,9 +48,11 @@ public class Projetjavaboite {
                   break;  
                 case 3:
                   System.out.println(" Merci d'être venu à bientot");
+                  
                   break;  
                 case 4:
                   break;  
+                    
                 default:
                    System.out.println("Vous n'avez pas fait le bon numéro!");
                c = myClient.ArriverDevantLaBoite();

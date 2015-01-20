@@ -24,6 +24,6 @@ public class Bouncer extends BoiteDeNuit {
     }
     
     public void setHumor(int newHumor){
-       humor=newHumor;   
+       this.humor= this.humor + newHumor;   
     }
 }

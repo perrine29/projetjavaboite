@@ -32,23 +32,66 @@ public class Men extends Client {
         int idx = new Random().nextInt(phrase.length);
         String random = (phrase[idx]);
         System.out.println(random);
-        ArriverDevantLaBoite();
+        
+      
+        switch(random){
+            
+            case "désolé, le videur est de mauvaise humeur,réessayer plus tard!":
+                
+            this.ArriverDevantLaBoite(); // ajouter le cas ou le type peut entrer, sedeplacer
+            break;
+                
+            case  "Vous avez fait bonne impression, vous pouvez entrer in da club":
+            this.tonEtat();    
+           
+                break;
+                
+            default: System.out.println("erreur");
+                
+                
+        }
+        
+        
+ 
             }
                 break;
             case 2:
                 System.out.println("Salut mon pote, vas-y entre");
-                SeDéplacer();
+                this.tonEtat();
                 
                 break;
             case 3:
                 System.out.println("t'as pas ta place ici , dégage!");
-                ArriverDevantLaBoite();
+                this.ArriverDevantLaBoite();
                 
                 break;
                 
             default: System.out.println("erreur de saisie"); 
-                getInTheClub();
+                this.getInTheClub();
                 
          }
      }
-}
+     
+     
+     public void draguer(){
+        
+         
+         
+     }
+     
+     
+     
+     
+     
+     }
+     
+    
+         
+         
+     
+     
+     
+     
+     
+     
+
