@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package projetjavaboite;
-import java.util.Random;
-import java.util.Scanner;
 /**
  *
  * @author isen
@@ -30,6 +28,44 @@ public class Projetjavaboite {
          String motAleatoire = mots[r.nextInt(mots.length)];
          System.out.println("Pas de chance, le videur est de mauvaise humeur ! " + motAleatoire);
        */
+        
+        
+     
+      String tab[][]= {{" "," ","*"," "," "},{" ","*"," ","*"," "},{"*"," ","*"," ","*"}};
+    
+       
+  
+      
+   for(int i = 0; i < 3; i++)
+{    
+  for(int j = 0; j < 5; j++){
+  
+      
+      
+    System.out.print(tab[i][j]);
+         
+     tab[1][1]= " ";  
+        
+  }
+   
+      System.out.println();
+}
+  
+   
+  
+   
+   
+    } 
+    
+   
+    }
+          
+         
+     
+    
+
+
+       /*   
         
         
        Scanner sc = new Scanner(System.in);
@@ -70,7 +106,7 @@ public class Projetjavaboite {
     
     
     
-    
+    */
     
     
     
