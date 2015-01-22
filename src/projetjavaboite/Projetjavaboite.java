@@ -29,7 +29,8 @@ public class Projetjavaboite {
          System.out.println("Pas de chance, le videur est de mauvaise humeur ! " + motAleatoire);
        */
         
-        
+      /*
+              
      
       String tab[][]= {{" "," ","*"," "," "},{" ","*"," ","*"," "},{"*"," ","*"," ","*"}};
     
@@ -59,16 +60,16 @@ public class Projetjavaboite {
     
    
     }
-          
+          */
          
      
     
 
 
-       /*   
         
         
-       Scanner sc = new Scanner(System.in);
+       
+      // Scanner sc = new Scanner(System.in);
        Client myClient = new Client();
        
         int c= myClient.ArriverDevantLaBoite();
@@ -106,7 +107,7 @@ public class Projetjavaboite {
     
     
     
-    */
+    
     
     
     

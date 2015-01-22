@@ -7,6 +7,7 @@ package projetjavaboite;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import projetjavaboite.exception.barException;
 /**
  *
  * @author isen
@@ -280,7 +281,9 @@ public class Client {
      // 
  }
  
-  public void goToTheBar(){
+  public void goToTheBar() {
+      
+     try{
          
          System.out.println("Vous êtes au bar !!! Que voulez-vous faire: \n 1- Prendre un verre \n 2- Jouer au jeu de la carte \n 3- Draguer la serveuse/le serveur \n 4- Voler des verres \n 5- Quitter le bar");   
          
@@ -309,23 +312,29 @@ public class Client {
                  break;
              default: System.out.println("erreur de saisie, merci de reformuler votre choix par 1,2,3 ,4 ou 5");
                  this.goToTheBar();
-                 
-             
-             
-           
          }
+         }
+     
+     catch
+             (barException e) {
+            System.out.println(e.getMessage());
   }
+  }    
  
  
- public void drink(){
+ public void drink() throws barException {
+     
+       if (this.budget==0) {
+            throw new barException("\nVous n'avez plus d'argent!!");
+        } else {
      
      System.out.println("\n Que voulez-vous boire? \n 1- une bière: 5euros \n 2-un cocktail: 10euros\n 3- un soft: 5euros\n 4- Je n'ai plus soif ");  
      String boisson= sc.nextLine();
      
-     if(this.budget ==0 ){
-         System.out.println("Vous n'avez plus d'argent");
-     }
-     else{
+    // if(this.budget ==0 ){
+      //   System.out.println("Vous n'avez plus d'argent");
+     //}
+     //else{
      
          switch(boisson){
           
