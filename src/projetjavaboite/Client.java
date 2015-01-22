@@ -6,7 +6,8 @@
 package projetjavaboite;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.InputMismatchException;
+import projetjavaboite.Bouncer;
+import projetjavaboite.BoiteDeNuit;
 import projetjavaboite.exception.barException;
 /**
  *
@@ -69,7 +70,7 @@ public class Client {
         
         
     }
-    
+     Bouncer bouncer1= new Bouncer();
 
     //Les méthodes
     
@@ -285,7 +286,7 @@ public class Client {
       
      try{
          
-         System.out.println("Vous êtes au bar !!! Que voulez-vous faire: \n 1- Prendre un verre \n 2- Jouer au jeu de la carte \n 3- Draguer la serveuse/le serveur \n 4- Voler des verres \n 5- Quitter le bar");   
+         System.out.println("Vous êtes au bar !!! Que voulez-vous faire: \n 1- Prendre un verre \n 2- Jouer au jeu de la carte (mise de 25euros) \n 3- Draguer la serveuse/le serveur \n 4- Danser sur le bar \n 5- Quitter le bar");   
          
          String choiceBar = sc.nextLine();
          
@@ -305,6 +306,7 @@ public class Client {
                  break;
                  
              case"4":
+                 this.danseOnTheBar(bouncer1);
                  break;
                  
              case "5": 
@@ -318,14 +320,17 @@ public class Client {
      catch
              (barException e) {
             System.out.println(e.getMessage());
+            this.SeDéplacer();
   }
   }    
  
  
  public void drink() throws barException {
      
-       if (this.budget==0) {
+       if (this.budget< 5) {
             throw new barException("\nVous n'avez plus d'argent!!");
+            
+            
         } else {
      
      System.out.println("\n Que voulez-vous boire? \n 1- une bière: 5euros \n 2-un cocktail: 10euros\n 3- un soft: 5euros\n 4- Je n'ai plus soif ");  
@@ -339,18 +344,10 @@ public class Client {
          switch(boisson){
           
              case "1":
-                
-            if(this.budget >= 5 ){
+  
                  this.setBudget(-5);
-                 this.setEtat(1);}
-                  
-                  
-            else { System.out.println("Vous n'avez plus assez d'argent");
-            this.goToTheBar();
-            }
-                  
-                  
-                  
+                 this.setEtat(1);
+
                  break;
                  
              case "2":
@@ -358,18 +355,14 @@ public class Client {
                  this.setBudget(-10);
                  this.setEtat(1);
                          }
-             else { System.out.println("Vous n'avez plus assez d'argent");
+             else { System.out.println("Vous n'avez pas assez d'argent pour un cocktail");
             this.goToTheBar();}
               break;
               
              case "3":
-              
-                if (this.budget>= 5) {
+  
               this.setBudget(-5);
-                 this.setEtat(0);}
-              
-              else { System.out.println("Vous n'avez plus assez d'argent");
-            this.goToTheBar();}
+              this.setEtat(0);
               
                  break;
              case "4" :
@@ -387,15 +380,16 @@ public class Client {
      }
  }
          
-      public void jeuDeLaCarte(){
+      public void jeuDeLaCarte()throws barException{
           
           System.out.println("La carte bleu qui sera tiré au sort devra payer à boire à toute la table !!! ");  
           
-          if ( this.budget < 25 ){
-              System.out.println("Vous n'avez pas assez d'argent !!! ");   
-          }
           
-          else{ 
+           if (this.budget< 25) 
+            throw new barException("\nVous n'avez pas assez d'argent, vous devez disposer de 25 euros!!");
+          else{
+                    
+                    }
         String test[]={"Vous avez perdu","Vous avez gagné"};
         int idx = new Random().nextInt(test.length);
         String random = (test[idx]);
@@ -418,7 +412,7 @@ public class Client {
             default: System.out.println("erreur");
                  
         }     
-        } 
+        
           
           System.out.println("Votre budget est de:" + this.budget);   
           this.goToTheBar();
@@ -426,11 +420,30 @@ public class Client {
       
       
     
-  public void volerDesVerres(){
+  public void danseOnTheBar(Bouncer bouncer1){
   
+    
       
-      
-      
+      if (this.beaute > 1 || this.etat < 5)
+      { 
+         
+         
+          System.out.println("\n Vous mettez l'ambiance comme jamais !!!"
+                  + "\n Attention de ne pas trop énerver le videur ..."); 
+          
+            bouncer1.setHumor(1);
+            System.out.println(bouncer1.getHumor());
+          
+          this.goToTheBar();
+      } 
+          
+      else    
+      {
+         
+          System.out.println("Le videur n'apprécie pas votre danse ! \n Au revoir ! ");
+          this.ArriverDevantLaBoite();
+      }
+     
       
   }
   

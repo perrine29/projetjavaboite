@@ -14,16 +14,22 @@ public class Bouncer extends BoiteDeNuit {
     protected int humor;
     
     public Bouncer(){
+        
     super();
-       this.humor=0;  
+      humor=0;  
     }
     
+    
+   
     //Accumulateur 
     public int getHumor(){
         return humor;
     }
     
     public void setHumor(int newHumor){
-       this.humor= this.humor + newHumor;   
+       this.humor= this.humor + newHumor;  
+       
     }
+    
+    
 }

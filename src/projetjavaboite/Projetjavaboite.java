@@ -71,6 +71,7 @@ public class Projetjavaboite {
        
       // Scanner sc = new Scanner(System.in);
        Client myClient = new Client();
+      
        
         int c= myClient.ArriverDevantLaBoite();
         
