@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetjavaboite;
+package Project;
 /**
  *
  * @author isen
  */
-public class Projetjavaboite {
+public class Project {
 
     /**
      * @param args the command line arguments
@@ -73,7 +73,7 @@ public class Projetjavaboite {
        Client myClient = new Client();
       
        
-        int c= myClient.ArriverDevantLaBoite();
+        int c= myClient.inFrontOfTheClub();
         
         while( c != 4){
            
@@ -82,7 +82,7 @@ public class Projetjavaboite {
                    myClient.clientCaract();
                     break;
                 case 2:     
-                myClient.ArriverDevantLaBoite(); // atention boucle ne se fini jamais, fonction à modifier
+                myClient.inFrontOfTheClub(); // atention boucle ne se fini jamais, fonction à modifier
                   break;  
                 case 3:
                   System.out.println(" Merci d'être venu à bientot");
@@ -93,7 +93,7 @@ public class Projetjavaboite {
                     
                 default:
                    System.out.println("Vous n'avez pas fait le bon numéro!");
-               c = myClient.ArriverDevantLaBoite();
+               c = myClient.inFrontOfTheClub();
             }
             
             

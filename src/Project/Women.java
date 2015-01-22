@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetjavaboite;
+package Project;
 import java.util.Scanner;
 /**
  *
@@ -29,17 +29,17 @@ System.out.println("Que voulez-vous dire au vigil? \n 1:Bonjour \n 2:Salut max, 
         switch (presentationChoice){
               case "1": System.out.println("Bonjour mademoiselle, allez y ");
        
-        this.tonEtat();
+        this.yourState();
             
                 break;
             case "2":
                 System.out.println("Salut blabla");
-                this.tonEtat();
+                this.yourState();
                 
                 break;
             case "3":
                 System.out.println("t'as pas ta place ici , dégage!");
-                this.ArriverDevantLaBoite();
+                this.inFrontOfTheClub();
                 
                 break;
                 

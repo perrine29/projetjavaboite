@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetjavaboite;
+package Project;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -38,11 +38,11 @@ public class Men extends Client {
             
             case "désolé, le videur est de mauvaise humeur,réessayer plus tard!":
                 
-            this.ArriverDevantLaBoite(); // ajouter le cas ou le type peut entrer, sedeplacer
+            this.inFrontOfTheClub(); // ajouter le cas ou le type peut entrer, sedeplacer
             break;
                 
             case  "Vous avez fait bonne impression, vous pouvez entrer in da club":
-            this.tonEtat();    
+            this.yourState();    
            
                 break;
                 
@@ -57,12 +57,12 @@ public class Men extends Client {
                 break;
             case 2:
                 System.out.println("Salut mon pote, vas-y entre");
-                this.tonEtat();
+                this.yourState();
                 
                 break;
             case 3:
                 System.out.println("t'as pas ta place ici , dégage!");
-                this.ArriverDevantLaBoite();
+                this.inFrontOfTheClub();
                 
                 break;
                 
@@ -73,7 +73,7 @@ public class Men extends Client {
      }
      
      
-     public void draguer(){
+     public void chat(){
         
          
          

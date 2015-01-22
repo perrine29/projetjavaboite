@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projetjavaboite;
+package Project;
 
 /**
  *
  * @author isen
  */
-public class Bouncer extends BoiteDeNuit {
+public class Bouncer extends Dansefloor {
     
     protected int humor;
     
