@@ -9,6 +9,7 @@ import java.util.Scanner;
 import Project.Bouncer;
 import Project.Dansefloor;
 import Project.exception.barException;
+import Project.beerPong;
 /**
  *
  * @author isen
@@ -81,7 +82,8 @@ public int getBudget(){
     
     
 Bouncer bouncer1= new Bouncer();
-
+BarmaidCool newBarmaid=new BarmaidCool();
+beerPong newPlayer= new beerPong();
     //Les méthodes
     
 public void getInTheClub(){
@@ -90,9 +92,55 @@ public void getInTheClub(){
 }
      
 public void chat(){
+    
      
    
-} 
+}
+    public void offerDrink(BarmaidCool newBarmaid) throws barException{
+        
+        if (this.budget< 5) {
+        throw new barException("\nVous n'avez plus d'argent!!");
+        }
+    
+    else {
+        //this.yourBudget();
+        System.out.println("votre budget actuel est de :"+ budget);
+        
+        System.out.println("Quelle boisson voulez-vous offrir ?\n 1) champagne: 15euros \n 2) jagger :5euros \n 3)finalement je n'ai pas envie de dépenser d'argent ");
+        int choice;
+        choice=sc.nextInt();
+    
+    switch (choice){
+        case 1:
+            
+        if (budget>15)
+        System.out.println("Laisser moi vous offrir une coupe de champagne");   
+        newBarmaid.setFun(4);
+        this.setBudget(-15);
+        case 2:
+        System.out.println("Laisser moi vous offrir une coupe de champagne");
+        newBarmaid.setFun(2);
+        this.setBudget(5);   
+        case 3:
+        move();
+        default: 
+            System.out.println("vous n'avez pas fait le bon numéro");
+            offerDrink(newBarmaid);
+        
+    }
+        }
+        getBudget();
+        System.out.println("votre budget actuel est de "+budget);
+        
+        offerDrink(newBarmaid);  
+    }
+    
+    
+    public void draguerBarmaid(){
+    if (newBarmaid.getFun() > 3)
+            System.out.println("La serveuse a l'air de vous apprécier !");
+    
+}
  
 public int inFrontOfTheClub(){
     System.out.println("Vous êtes actuellement devant une boite de nuit, que voulez vous faire ? \n 1- Entrer dans la boite de nuit \n 2- Rester devant la boite \n 3- Quitter le simulateur");
@@ -257,8 +305,8 @@ this.move();
     
  public void move(){
      
-   
-System.out.println("Vous êtes dans la boite de nuit! Que voulez vous faire: \n 1- aller au bar \n 2- aller danser \n 3- Jouer \n 4- Sortir de la boite");     
+ 
+System.out.println("Vous êtes dans la boite de nuit! Que voulez vous faire: \n 1- aller au bar \n 2- draguer \n 3- Jouer \n 4- Sortir de la boite");     
 String choix = sc.nextLine();
      
     switch(choix){
@@ -268,9 +316,13 @@ String choix = sc.nextLine();
         break;
             
         case "2":
+        chat();
         break;
             
         case "3":
+       
+       newPlayer.play();
+       
         break;
             
         case "4": System.out.println("Merci d'être venu(e)");
@@ -281,18 +333,22 @@ String choix = sc.nextLine();
         this.move();          
        
      }
+   
+   
+  
      // aller au bar : commander budget, danser sur le bar: enerver le videur, voler un verre enerver le videur , jeu de la carte: budget
      
      // aller danser: danser comme un beau goss, danser comme un looser, draguer, renverser son verre 
      
      // 
  }
+
  
 public void goToTheBar() {
       
     try{
          
-        System.out.println("Vous êtes au bar !!! Que voulez-vous faire: \n 1- Prendre un verre \n 2- Jouer au jeu de la carte (mise de 25euros) \n 3- Draguer la serveuse/le serveur \n 4- Danser sur le bar \n 5- Quitter le bar");   
+        System.out.println("Vous êtes au bar !!! Que voulez-vous faire: \n 1- Prendre un verre \n 2- Jouer au jeu de la carte (mise de 25euros)  \n 3- Danser sur le bar \n 4- Quitter le bar");   
          
         String choiceBar = sc.nextLine();
          
@@ -307,16 +363,14 @@ public void goToTheBar() {
                  break;
                  
             case"3":
-                this.chat();
-                break;
-                 
-            case"4":
                 this.danseOnTheBar(bouncer1);
                 break;
                  
-            case "5": 
+            case"4":
                 this.move();
                 break;
+                 
+            
                 
             default: System.out.println("erreur de saisie, merci de reformuler votre choix par 1,2,3 ,4 ou 5");
             this.goToTheBar();
@@ -339,7 +393,7 @@ public void goToTheBar() {
     
     else {
      
-        System.out.println("\n Que voulez-vous boire? \n 1- une bière: 5euros \n 2-un cocktail: 10euros\n 3- un soft: 5euros\n 4- Je n'ai plus soif ");  
+        System.out.println("\n Que voulez-vous commander? \n 1- une bière: 5euros \n 2-un cocktail: 10euros\n 3- un soft: 5euros\n 4- Je n'ai plus soif ");  
         String boisson= sc.nextLine();
 
      
@@ -378,7 +432,11 @@ public void goToTheBar() {
     this.drink();
     }
  }
-         
+ /**
+ 
+ fonction creditcardgame permet de blabla
+
+ */       
 public void creditCardGame()throws barException{
           
 System.out.println("La carte bleu qui sera tiré au sort devra payer à boire à toute la table !!! ");  
@@ -418,7 +476,7 @@ this.goToTheBar();
     
 public void danseOnTheBar(Bouncer bouncer1){
   
-    if (this.beauty > 1 || this.state < 5)
+    if (this.beauty > 1 || this.state < 5 || bouncer1.humor <4 )
     { 
          
         System.out.println("\n Vous mettez l'ambiance comme jamais !!!" + "\n Attention de ne pas trop énerver le videur ..."); 
@@ -435,7 +493,8 @@ public void danseOnTheBar(Bouncer bouncer1){
          
 }
   
-  
+
+
       
       
 }

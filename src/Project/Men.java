@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Project;
+import Project.exception.barException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -73,23 +74,36 @@ public class Men extends Client {
      }
      
      
-     public void chat(){
+     @Override public void chat(){
+         
+    try{     
+         
+          System.out.println("Que voulez-vous faire : 1) Offrir un verre \n 2) draguer la serveuse"); 
+    String choice;
+    choice=sc.nextLine ();
+    
+    switch (choice){
+        case "1":
+            
+        this.offerDrink(newBarmaid);
         
-         
-         
      }
-     
-     
-     
-     
-     
+    
      }
-     
+    
+      catch
+        (barException e) {
+            System.out.println(e.getMessage());
+            this.move();
+  }
+    
+    
+}   
     
          
-         
+}         
      
-     
+    
      
      
      
