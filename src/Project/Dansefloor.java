@@ -11,4 +11,12 @@ package Project;
  */
 public class Dansefloor {
     
+  
+    
+    Bouncer bouncer1= new Bouncer();
+    
+Barman newBarman =new Barman();
+
+beerPong newPlayer= new beerPong();
+
 }

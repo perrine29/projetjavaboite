@@ -9,7 +9,7 @@ package Project;
  *
  * @author isen
  */
-public class Bouncer extends Dansefloor {
+public class Bouncer  {
     
     protected int humor;
     

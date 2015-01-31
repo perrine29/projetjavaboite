@@ -21,7 +21,7 @@ public class Men extends Client {
      
     Scanner sc=new Scanner(System.in);
     
-     @Override public void getInTheClub(){
+     @Override public void getInTheClub(Dansefloor myDansefloor){
          
         System.out.println("Que voulez-vous dire au vigil? \n 1:Bonjour \n 2:Yo, mon pote ! \n 3:Je crois que je vais vomir \n");
         int presentationChoice;
@@ -29,7 +29,7 @@ public class Men extends Client {
         
         switch (presentationChoice){
               case 1: {
-        String phrase[]={"désolé, le videur est de mauvaise humeur,réessayer plus tard!","Vous avez fait bonne impression, vous pouvez entrer in da club"};
+      String phrase[]={"désolé, le videur est de mauvaise humeur,réessayer plus tard!","Vous avez fait bonne impression, vous pouvez entrer in da club"};
         int idx = new Random().nextInt(phrase.length);
         String random = (phrase[idx]);
         System.out.println(random);
@@ -39,11 +39,11 @@ public class Men extends Client {
             
             case "désolé, le videur est de mauvaise humeur,réessayer plus tard!":
                 
-            this.inFrontOfTheClub(); // ajouter le cas ou le type peut entrer, sedeplacer
+            this.inFrontOfTheClub(myDansefloor); // ajouter le cas ou le type peut entrer, sedeplacer
             break;
                 
             case  "Vous avez fait bonne impression, vous pouvez entrer in da club":
-            this.yourState();    
+            this.yourState(myDansefloor);    
            
                 break;
                 
@@ -58,35 +58,45 @@ public class Men extends Client {
                 break;
             case 2:
                 System.out.println("Salut mon pote, vas-y entre");
-                this.yourState();
+                this.yourState(myDansefloor);
                 
                 break;
             case 3:
                 System.out.println("t'as pas ta place ici , dégage!");
-                this.inFrontOfTheClub();
+                this.inFrontOfTheClub(myDansefloor);
                 
                 break;
                 
             default: System.out.println("erreur de saisie"); 
-                this.getInTheClub();
+                this.getInTheClub(myDansefloor);
                 
          }
      }
      
      
-     @Override public void chat(){
+      public void chat(Barman newBarman,Dansefloor myDansefloor){
          
     try{     
          
-          System.out.println("Que voulez-vous faire : 1) Offrir un verre \n 2) draguer la serveuse"); 
+          System.out.println("Que voulez-vous faire :\n 1) Offrir un verre \n 2) draguer la serveuse \n 3) J'ai changé d'avis" ); 
     String choice;
-    choice=sc.nextLine ();
+    choice=sc.nextLine();
     
     switch (choice){
         case "1":
             
-        this.offerDrink(newBarmaid);
-        
+        this.offerDrink(newBarman,myDansefloor);
+        break;
+            
+        case "2":
+            System.out.println("pas codé");
+         break;
+            
+        case "3":
+       this.move(myDansefloor); 
+            break;
+            
+        default: System.out.println(" erreur de saisie");
      }
     
      }
@@ -94,7 +104,7 @@ public class Men extends Client {
       catch
         (barException e) {
             System.out.println(e.getMessage());
-            this.move();
+            this.move(myDansefloor);
   }
     
     

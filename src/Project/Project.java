@@ -65,13 +65,20 @@ public class Project {
    
        
       // Scanner sc = new Scanner(System.in);
-       Client myClient = new Client();
-       
-      
-       
-        int c= myClient.inFrontOfTheClub();
         
-        while( c != 4){
+        
+       Dansefloor myDansefloor = new Dansefloor();
+       
+          Client myClient = new Client();
+       
+        
+             //int c=
+                    
+              myClient.inFrontOfTheClub(myDansefloor);
+              
+              
+        
+       /* while( c != 4){
            
             switch(c){
                 case 1:
@@ -91,14 +98,10 @@ public class Project {
                    System.out.println("Vous n'avez pas fait le bon numéro!");
                c = myClient.inFrontOfTheClub();
             }
+            */
             
-            
-        }
-        
-        
-                
-        
-    }
+        //}
+       }
 }
 
     

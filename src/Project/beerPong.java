@@ -11,7 +11,7 @@ import Project.Client;
  *
  * @author isen
  */
-public class beerPong {
+public class beerPong  {
     
    
     
@@ -57,8 +57,9 @@ System.out.println();
     
   
    
-public void play(){
-        
+public void play(Dansefloor myDansefloor){
+   
+    
 do {
        
     nombreManche= nombreManche + 1;
@@ -77,7 +78,7 @@ do {
     }
 while ( isArrayEmpty() == false);
   
-this.move();
+  //this.myClient.move(myDansefloor);
 
 
 }

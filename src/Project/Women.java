@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 
 
-     @Override public void getInTheClub(){
+ @Override     public void getInTheClub(Dansefloor myDansefloor){
 System.out.println("Que voulez-vous dire au vigil? \n 1:Bonjour \n 2:Salut max, comment tu vas ? ! \n 3:Je crois que je vais vomir \n");
         String presentationChoice;
         presentationChoice=sc.nextLine();
@@ -29,22 +29,22 @@ System.out.println("Que voulez-vous dire au vigil? \n 1:Bonjour \n 2:Salut max, 
         switch (presentationChoice){
               case "1": System.out.println("Bonjour mademoiselle, allez y ");
        
-        this.yourState();
+        this.yourState(myDansefloor);
             
                 break;
             case "2":
                 System.out.println("Salut blabla");
-                this.yourState();
+                this.yourState(myDansefloor);
                 
                 break;
             case "3":
                 System.out.println("t'as pas ta place ici , dégage!");
-                this.inFrontOfTheClub();
+                this.inFrontOfTheClub(myDansefloor);
                 
                 break;
                 
             default: System.out.println("erreur de saisie"); 
-                this.getInTheClub();
+                this.getInTheClub(myDansefloor);
                 
          }
      }
