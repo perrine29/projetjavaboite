@@ -10,13 +10,33 @@ package Project;
  * @author isen
  */
 public class Dansefloor {
+
+    Bouncer bouncer1 = new Bouncer();
+
+  // Barman newBarman = new Barman();
+
+    beerPong newPlayer = new beerPong();
+    
+    
+   
     
   
     
-    Bouncer bouncer1= new Bouncer();
+    public void setBarman(String sexe){
+        
+        if ( sexe.equalsIgnoreCase("1"))
+        {
+         
+            Barman newBarman= new BarmaidCool();
+            
+        }
+  
+       if (sexe.equalsIgnoreCase("2")) 
+       {
+          Barman newBarman= new BarmanCool();
+       }
+                
+    }
     
-Barman newBarman =new Barman();
-
-beerPong newPlayer= new beerPong();
-
+    
 }

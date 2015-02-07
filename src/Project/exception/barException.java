@@ -9,10 +9,8 @@ package Project.exception;
  *
  * @author isen
  */
-public class barException extends Exception{
-    
-    
-    
+public class barException extends Exception {
+
     /**
      * annonce à l'utilisateur que son panier est vide.
      *
@@ -22,7 +20,4 @@ public class barException extends Exception{
         super(message);
     }
 
-    
-    
-    
 }
