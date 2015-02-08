@@ -26,8 +26,8 @@ public class BarmaidCool extends Barman implements BarmanAction{
     
   @Override
      public  void refuserDeServir(){
-      System.out.println("dfuhb yujrhfb");     
-         
+      System.out.println("Vous êtes trop saoul monsieur, je ne peux plus vous servir !");     
+       
      }
      
      @Override

@@ -46,7 +46,7 @@ public void drague(Barman newBarman,Dansefloor myDansefloor){
                     case "Tu as un sourire qui remplace le soleil quand il pleut ":
                         System.out.println("La serveuse aime votre éloquence");
                         newBarman.setFun(1);
-                         if ( newBarman.getFun()> 10)
+                         if ( newBarman.getFun()>= 10 && getBeauty()>1)
                     {
                      ((BarmaidCool)newBarman).embrasser();
                 }
@@ -57,7 +57,7 @@ public void drague(Barman newBarman,Dansefloor myDansefloor){
                     case "Ton père est pas voleur par hasard ? Parce qu'il a volé toutes les étoiles pour les mettre dans tes yeux":
                         System.out.println("Vous avez trop parlé ! , la serveuse est blasée");
                         newBarman.setFun(-2);
-                         if ( newBarman.getFun()> 10)
+                         if ( newBarman.getFun()> 10 && getBeauty()>1)
                     {
                      ((BarmaidCool)newBarman).embrasser();
                 }

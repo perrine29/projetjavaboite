@@ -7,10 +7,8 @@ package Project;
 
 import java.util.Random;
 import java.util.Scanner;
-import Project.Bouncer;
-import Project.Dansefloor;
 import Project.exception.barException;
-import Project.beerPong;
+
 
 /**
  *
@@ -49,7 +47,7 @@ public class Client {
         return state;
     }
 
-    public int getBeauté() {
+    public int getBeauty() {
         return beauty;
     }
 
@@ -70,8 +68,8 @@ public class Client {
         this.state = this.state + newEtat;
     }
 
-    public void setBeaute(int bBeaute) {
-        beauty = bBeaute;
+    public void setBeauty(int bBeauty) {
+        beauty = bBeauty;
     }
 
     public void setBudget(int bBudget) {
@@ -203,7 +201,7 @@ break;
          System.out.println("Désolé, vous n'avaez pas l'age d'aller en boite !");
          ArriverDevantLaBoite();
          }*/
-        System.out.println("êtes vous:\n 1) un homme \n 2)une femme ?");
+        System.out.println("êtes vous:\n 1)un homme \n 2)une femme ?");
         String sexe = sc.nextLine();
 
         switch (sexe) {
@@ -261,11 +259,11 @@ break;
                 break;
 
             case "2":
-                this.state = 3;
+                this.state = 5;
                 break;
 
             case "3":
-                this.state = 5;
+                this.state = 8;
                 break;
 
             default:
@@ -409,19 +407,18 @@ break;
     }
 
     public void drink(Barman newBarman,Dansefloor myDansefloor) throws barException {
+        
+if(state > 9){
+             newBarman.refuserDeServir(); 
+        goToTheBar(newBarman,myDansefloor);
+}
 
-        if(state > 4){
-            
-            newBarman.refuserDeServir();   
-        }
-        
-        
-        
-        
          if (budget < 5) {
             throw new barException("\nVous n'avez plus d'argent!!");
-        } else {
-
+            
+        } 
+        else {
+             
             System.out.println("\n Que voulez-vous commander? \n 1- une bière: 5euros \n 2-un cocktail: 10euros\n 3- un soft: 5euros\n 4- Je n'ai plus soif ");
             String boisson = sc.nextLine();
 
@@ -503,10 +500,10 @@ break;
 
     public void danseOnTheBar(Barman newBarman,Dansefloor myDansefloor) {
 
-        if (this.beauty > 1 || this.state < 5 || myDansefloor.bouncer1.humor < 4) {
+        if (this.beauty > 1 || this.state < 6 || myDansefloor.bouncer1.humor <= 4) {
 
             System.out.println("\n Vous mettez l'ambiance comme jamais !!!" + "\n Attention de ne pas trop énerver le videur ...");
-            myDansefloor.bouncer1.setHumor(1);
+            myDansefloor.bouncer1.setHumor(2);
             System.out.println(myDansefloor.bouncer1.getHumor());
             this.goToTheBar(newBarman,myDansefloor);
         } else {
