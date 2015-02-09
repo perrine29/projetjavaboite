@@ -17,18 +17,11 @@ public class Project {
     public static void main(String[] args) {
         // TODO code application logic here
 
-     
-     
-        Dansefloor myDansefloor = new Dansefloor();
-        
-        
-        Client myClient = new Client();
- //BarmanCool newBarmanCool = new BarmanCool();
-  //BarmaidCool newBarmaidCool = new BarmaidCool();
-             //int c=
-        
-        myClient.inFrontOfTheClub(myDansefloor);
+        Dancefloor myDansefloor = new Dancefloor();
 
-       
+      
+
+        myDansefloor.myClient.inFrontOfTheClub(myDansefloor);
+
     }
 }

@@ -5,8 +5,9 @@
  */
 package Project;
 
+import Project.Dancefloor;
 import java.util.Random;
-import Project.Client;
+
 
 /**
  *
@@ -16,7 +17,7 @@ public class beerPong {
 
     int max1 = 5, max2 = 11, min1 = 0, min2 = 6;
     int nombreAleatoire1, nombreAleatoire2;
-    int i, j, k, l, m, n, o, p, a, nombreManche = 0;
+    int i, j, k, l,  nombreManche = 0;
 
     Random rand = new Random();
 
@@ -50,14 +51,14 @@ public class beerPong {
 
     }
 
-    public void play(Dansefloor myDansefloor) {
+    public void play(Dancefloor myDansefloor) {
 
         do {
 
             nombreManche = nombreManche + 1;
 
             System.out.println("Numéro de la manche :" + nombreManche);
-            System.out.println("joueur 1: a votre tour!");
+            System.out.println( " a votre tour!");
             player1();
             printBeerPong();
 
@@ -70,7 +71,7 @@ public class beerPong {
             printBeerPong();
         } while (isArrayEmpty() == false);
 
-  //this.myClient.move(myDansefloor);
+        //this.myClient.move(myDansefloor);
     }
 
     public boolean isArrayEmpty() {
@@ -79,15 +80,15 @@ public class beerPong {
             System.out.println("le joueur 2 a gagné! ");
 
             if (nombreManche > 5) {
-                System.out.println("Vous avez gagné avec beaucoup de difficultés");
+                System.out.println("avec beaucoup de difficultés: nombre de manche: " + nombreManche);
             }
             return true;
         }
 
         if (array1bis[6] == true && array1bis[7] == true && array1bis[8] == true && array1bis[9] == true && array1bis[10] == true && array1bis[11] == true) {
-            System.out.println("le joueur 1 a gagné! ");
+            System.out.println("Vous avez gagné! ");
             if (nombreManche > 5) {
-                System.out.println("avec des difficultés");
+                System.out.println("avec beaucoup de difficultés: nombre de manche : " + nombreManche);
             }
             return true;
         }
@@ -99,7 +100,7 @@ public class beerPong {
     public void player1() {
 
         nombreAleatoire1 = rand.nextInt(max2 - min2 + 1) + min2;
-        System.out.println("le premier nombre aléatoire est :" + nombreAleatoire1);
+       // System.out.println("le premier nombre aléatoire est :" + nombreAleatoire1);
         System.out.println();
 
         array1bis[nombreAleatoire1] = true;
@@ -110,7 +111,7 @@ public class beerPong {
 
     public void player2() {
         nombreAleatoire2 = rand.nextInt(max1 - min1 + 1) + min1;
-        System.out.println("le deuxieme nombre aléatorie est :" + nombreAleatoire2);
+       // System.out.println("le deuxieme nombre aléatorie est :" + nombreAleatoire2);
         System.out.println();
 
         array1bis[nombreAleatoire2] = true;

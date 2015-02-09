@@ -5,23 +5,28 @@
  */
 package Project;
 
+import Project.Barman;
+
 /**
  *
  * @author isen
  */
 public class BarmanCool extends Barman {
     
-    
-    
-    
-    
-    
-    @Override    
-     public  void refuserDeServir(){
-      System.out.println("Vous êtes trop saoul madame, je ne peux plus vous servir !");     
-        
-     }
-     }
-    
+      public BarmanCool() {
+        super(); //cela permet de récupérer le constructeur de la classe mère
+        setSexe("masculin");
+
+        setBeauty(3);
+
+        setFun(4);
+
+    }
     
 
+    @Override
+    public void refuserDeServir() {
+        System.out.println("Vous êtes trop saoul madame, je vais devoir dire non à ce si beau sourire... ");
+
+    }
+}

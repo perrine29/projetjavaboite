@@ -9,27 +9,24 @@ package Project;
  *
  * @author isen
  */
-public class Bouncer  {
-    
+public class Bouncer {
+
     protected int humor;
-    
-    public Bouncer(){
-        
-    super();
-      humor=0;  
+
+    public Bouncer() {
+
+        super();
+        humor = 0;
     }
-    
-    
-   
+
     //Accumulateur 
-    public int getHumor(){
+    public int getHumor() {
         return humor;
     }
-    
-    public void setHumor(int newHumor){
-       this.humor= this.humor + newHumor;  
-       
+
+    public void setHumor(int newHumor) {
+        this.humor = this.humor + newHumor;
+
     }
-    
-    
+
 }

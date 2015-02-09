@@ -9,8 +9,14 @@ package Project;
  *
  * @author isen
  */
-public interface BarmanAction {
+public class Dancefloor {
 
-    public void embrasser();
+    Bouncer bouncer1 = new Bouncer();
+
+    beerPong newPlayer = new beerPong();
+
+    Client myClient = new Client();
+
+    Barman newBarman;
 
 }

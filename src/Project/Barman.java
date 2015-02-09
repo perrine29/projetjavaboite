@@ -12,10 +12,9 @@ package Project;
 public abstract class Barman {
 
     //variable d'instance
-
     private String sexe; // permet aux enfants de la classe mère d'utiliser ces variables d'instance 
     private int age;
-   
+
     private int beauty;
     private int fun;
 
@@ -23,17 +22,13 @@ public abstract class Barman {
     public Barman() {
         sexe = "inconnu";
         age = 25;
-       fun=0;
-        
+        fun = 0;
+
     }
 
     // Accesseurs
     public String getSexe() {
         return sexe;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public int getBeauty() {
@@ -45,10 +40,6 @@ public abstract class Barman {
     }
 
     //Mutateurs
-    public void setAge(int newAge) {
-        age = newAge;
-    }
-
     public void setSexe(String newSexe) {
         sexe = newSexe;
     }
@@ -62,14 +53,6 @@ public abstract class Barman {
 
     }
 
-   
     public abstract void refuserDeServir();
-    
-    
-    
-    
-  
+
 }
-
-
-// si le client est trop saoul, le barman ne sert plus d'alcool
